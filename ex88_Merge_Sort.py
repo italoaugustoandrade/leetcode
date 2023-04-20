@@ -37,7 +37,8 @@ class Solution:
             i = MAX_LEN
 
         while i < len(nums1):
-            if nums1[i] > nums2[j]:
+            #Compare order. Insert in the position and remove the last  
+            if nums1[i] > nums2[j]: 
                 nums1.insert(i, nums2[j])
                 nums1.pop()
                 j = j+1
@@ -49,7 +50,6 @@ class Solution:
                 break
             i = i+1
 
-# pop  e inser para lista
 
 
 f1 = [-1, 3, 0, 0, 0, 0, 0]
