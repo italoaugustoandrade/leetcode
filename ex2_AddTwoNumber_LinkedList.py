@@ -11,7 +11,8 @@ class ListNode:
     """Class Node for singly-linked list
     """
 
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next=None):  # pylint: disable=W0622
+        # Var next defined by question
         self.val = val
         self.next = next
 

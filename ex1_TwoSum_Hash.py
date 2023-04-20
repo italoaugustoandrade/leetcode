@@ -22,7 +22,8 @@ class Solution:
         Given an array of integers nums and an integer target, 
         return indices of the two numbers such that they add up to target.
 
-        You may assume that each input would have exactly one solution, and you may not use the same element twice.
+        You may assume that each input would have exactly one solution, 
+        and you may not use the same element twice.
 
         You can return the answer in any order.
 
@@ -33,13 +34,13 @@ class Solution:
         Returns:
             List[int]: indices of the two numbers
         """
-        Hash = {}
+        key_dict = {}
         for i, num in enumerate(nums):
-            id = target-num
-            if id in Hash:
-                return [Hash[id], i]
-            else:
-                Hash[nums[i]] = i
+            complement = target-num
+            if complement in key_dict:
+                return [key_dict[complement], i]
+
+            key_dict[nums[i]] = i
 
 
 input_fun1 = [3, 2, 4]

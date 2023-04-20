@@ -32,11 +32,12 @@ class Solution:
         best_sum = -10**4
 
         while i <= len_nums-1:
+            #Compare if the best way is add or to start another subarray
             if nums[i] > sum_ant + nums[i]:
                 sum_ant = nums[i]
             else:
                 sum_ant = sum_ant+nums[i]
-            if sum_ant > best_sum:
+            if sum_ant > best_sum: #Save the best result so far 
                 best_sum = sum_ant
             i = i+1
         return best_sum
