@@ -1,7 +1,6 @@
 ''' 
 217. Contains Duplicate
-Given an integer array nums, return true if any value appears at least twice in the array, 
-and return false if every element is distinct.
+
 
 https://leetcode.com/problems/contains-duplicate/?envType=study-plan&id=data-structure-i
 Ítalo Andrade
@@ -10,14 +9,16 @@ https://leetcode.com/problems/contains-duplicate/?envType=study-plan&id=data-str
 
 
 class Solution:
-    """ DOC STRING
-        DOC 
+    """
+     Class Solution for question. 
     """
 
     @staticmethod
     def containsDuplicate(nums):
-        """ DOC STRING
-            DOC 
+        """ 
+            Given an integer array nums, return true if any value appears at least twice in the array, 
+            and return false if every element is distinct. 
+
         """
         hash_dict = {}
         for num in nums:

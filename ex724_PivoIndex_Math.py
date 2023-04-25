@@ -12,8 +12,9 @@ from typing import List
 
 
 class Solution:
-    """Class solution exercise
-
+    """    
+    Class Solution for question. 
+    
     Returns:
         None
     """
