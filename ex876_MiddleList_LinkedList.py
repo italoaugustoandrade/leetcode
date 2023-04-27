@@ -1,6 +1,6 @@
 ''' 
-206. Reverse Linked List
-https://leetcode.com/problems/reverse-linked-list/?envType=study-plan&id=level-1
+876. Middle of the Linked List
+https://leetcode.com/problems/middle-of-the-linked-list/?envType=study-plan&id=level-1
 Ítalo Andrade
 
 '''
@@ -52,49 +52,44 @@ class Solution:
      Class Solution for question. 
     """
     @staticmethod
-    def reverseList(head: ListNode) -> ListNode:
-        """
-        You are given the heads of two sorted linked lists list1 and list2.
+    def middleNode(head: ListNode) -> ListNode:
+        """Given the head of a singly linked list, return the middle node of the linked list.
 
-        Merge the two lists in a one sorted list. The list should be made by 
-        splicing together the nodes of the first two lists.
-
-        Return the head of the merged linked list.
-        Args:
-            l1 (ListNode): ListNode to merge
-            l2 (ListNode): ListNode to merge
+        If there are two middle nodes, return the second middle node.
 
         Returns:
-            (ListNode): Head of linked list 
+            ListNode: Middlist
         """
         current = head
+        middle = current
         array_val = []
         # Input processing: None type
-
+        i = 1
+        j = 1
         if head is None:
             return
 
         while True:
+
             if current.next is None:
                 array_val.append(current.val)
-                break
+                if i%2==0:
+                    middle=middle.next
+                return middle
+
+
+            if j*2 <= i:
+                j = j+1
+                middle=middle.next
             array_val.append(current.val)
             current = current.next
-
-        current = ListNode()
-        linked_list = current
-        for i, value in enumerate(reversed(array_val)):
-            current.val = value
-            if i < len(array_val)-1:
-                current.next = ListNode()
-                current = current.next
-
-        return linked_list
+            i = i+1
 
 
-list3 = ListNode.create_linked_list(array_list=[1, 2])
+
+list3 = ListNode.create_linked_list(array_list=[1, 2, 3, 4, 5, 6, 8,9])
 list4 = ListNode.create_linked_list(array_list=[0])
 
 
-resultado = Solution.reverseList(list3)
+resultado = Solution.middleNode(list3)
 resultado.print_linked_list()
