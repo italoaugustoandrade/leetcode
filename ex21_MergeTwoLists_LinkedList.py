@@ -69,7 +69,9 @@ class Solution:
         """
         current = ListNode()
         head = current
-        MAX_VAL = 100000
+        MAX_VAL = 150  # MAX number input
+
+        # Input processing: None type
         if list1 is None and list2 is None:
             return
         if list1 is None:
@@ -80,18 +82,18 @@ class Solution:
         while True:
             if list1.val < list2.val:
                 current.val = list1.val
-                if list1.next is not None:
+                if list1.next is not None:  # Next node
                     list1 = list1.next
-                else:
+                else:  # Set upper limit
                     list1.val = MAX_VAL
             else:
                 current.val = list2.val
-                if list2.next is not None:
+                if list2.next is not None:  # Next node
                     list2 = list2.next
-                else:
+                else:  # Set upper limit
                     list2.val = MAX_VAL
 
-            if list2.val == MAX_VAL and list1.val == MAX_VAL:
+            if list2.val == MAX_VAL and list1.val == MAX_VAL:  # When both list ended
                 return head
             else:
                 current.next = ListNode()
