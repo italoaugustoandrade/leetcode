@@ -1,6 +1,6 @@
 ''' 
-876. Middle of the Linked List
-https://leetcode.com/problems/middle-of-the-linked-list/?envType=study-plan&id=level-1
+142. Linked List Cycle II
+https://leetcode.com/problems/linked-list-cycle-ii/?envType=study-plan&id=level-1
 Ítalo Andrade
 
 '''
@@ -52,41 +52,45 @@ class Solution:
      Class Solution for question. 
     """
     @staticmethod
-    def middleNode(head: ListNode) -> ListNode:
-        """Given the head of a singly linked list, return the middle node of the linked list.
+    def detectCycle(head: ListNode) -> ListNode:
+        """Given the head of a linked list, return the node where the cycle begins. 
+        If there is no cycle, return null.
 
-        If there are two middle nodes, return the second middle node.
+        There is a cycle in a linked list if there is some node in the list that can be 
+        reached again by continuously following the next pointer. Internally, pos is used 
+        to denote the index of the node that tail's next pointer is connected to (0-indexed). 
+        It is -1 if there is no cycle. Note that pos is not passed as a parameter.
+
+        Do not modify the linked list.
 
         Returns:
-            ListNode: Middlist
+            int: pos
         """
         current = head
-        middle = current
+        key_hash = {}
+        i = 0
         # Input processing: None type
-        i = 1
-        j = 1
+
         if head is None:
             return
 
         while True:
 
+            if current.val in key_hash:
+                current = key_hash[current.val]
+                return current
+
             if current.next is None:
-                if i%2==0:
-                    middle=middle.next
-                return middle
-
-
-            if j*2 <= i:
-                j = j+1
-                middle=middle.next
+                return
+            key_hash[current.val] = current
             current = current.next
             i = i+1
 
 
-
-list3 = ListNode.create_linked_list(array_list=[1, 2, 3, 4, 5, 6, 8,9])
+list3 = ListNode.create_linked_list(array_list=[-1,-7,7,-4,19,6,-9,-5,-2,-5])
 list4 = ListNode.create_linked_list(array_list=[0])
 
 
-resultado = Solution.middleNode(list3)
+resultado = Solution.detectCycle(list3)
 resultado.print_linked_list()
+print(resultado)
