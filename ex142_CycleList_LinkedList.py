@@ -76,13 +76,12 @@ class Solution:
 
         while True:
 
-            if current.val in key_hash:
-                current = key_hash[current.val]
+            if current in key_hash:
                 return current
 
             if current.next is None:
                 return
-            key_hash[current.val] = current
+            key_hash[current] = current.val
             current = current.next
             i = i+1
 
@@ -93,4 +92,3 @@ list4 = ListNode.create_linked_list(array_list=[0])
 
 resultado = Solution.detectCycle(list3)
 resultado.print_linked_list()
-print(resultado)
