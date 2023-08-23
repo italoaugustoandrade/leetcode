@@ -6,7 +6,7 @@ static/error/*
 core.*
 .vscode/
 .pylintrc
-*.out
+
 
 ### Flask ###
 instance/*
@@ -23,6 +23,7 @@ __pycache__/
 
 # C extensions
 *.so
+*.out
 
 # Distribution / packaging
 .Python
