@@ -1,3 +1,2 @@
-# Welcome to my pratice project
-My name is Ítalo Andrade. 
-I created this repository to store some questions so that I can keep practicing Data Structures and Algorithms, mainly in Python.
+# Welcome to my pratice project 
+This is a repository I created with the goal of enhancing my skills in data structures. Here, you will find a variety of challenges from the LeetCode platform, covering a wide range of structures such as arrays, linked lists, trees, graphs, and more. By solving these challenges, I aim to strengthen my algorithmic reasoning and improve my proficiency in practical implementations. Through the resolution of these challenges, I am striving to enhance my algorithmic reasoning skills and elevate my proficiency in practical implementations.
